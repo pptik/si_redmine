@@ -55,7 +55,7 @@ async function groupByProject(id) {
     
     return findResult.toArray();
 }
-async function groupByIssue(id) {
+async function groupByIssue() {
     // Use connect method to connect to the server
     await client.connect();
     console.log('Connected successfully to server');
@@ -81,7 +81,7 @@ async function groupByIssue(id) {
     },
     // { $match: { "payload.project.project_id":parseInt(id)}},
     { $group: {
-      _id: "$payload.issue_id",
+      _id: {"issue_id":"$payload.issue_id", "project_id":"$payload.project.project_id" },
       name: {$first: "$payload.issue_subject"},
       project_name: {$first: "$payload.project.project_name"},
       numberofaccess: { $sum: 1 }

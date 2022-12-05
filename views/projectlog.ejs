@@ -49,7 +49,7 @@
                     <% project_all.forEach(element => { %>
                       <tr>
                         <td><%=element._id %></td>
-                        <td><%=element.name %></td>
+                        <td><%= (element.name==null)? "Buka Project list":element.name %> </td>
                         <td><%=element.numberofaccess %></td>
                       </tr>
                       

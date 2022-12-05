@@ -78,7 +78,7 @@
                   <tbody>
                     <% issue_by_project.forEach(element => { %>
                       <tr>
-                        <td><%=element.name %></td>
+                        <td><%= (element.name==null)? "Melihat list issue":element.name %></td>
                         
                         <td><%=element.numberofaccess %></td>
                       </tr>
@@ -135,7 +135,8 @@
         var sum = 0
         ibp_json.forEach(element => {
           // console.log(element._id)
-          label.push(element.name)
+          (element.name==null)? label.push("Melihat list issue"):label.push(element.name)
+          // label.push(element.name)
           dta.push(element.numberofaccess)
           sum = sum + element.numberofaccess
         });

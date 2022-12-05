@@ -44,8 +44,8 @@
                     <% all_issue.forEach(element => { %>
                      
                       <tr>
-                        <td><%= element._id %> </td>
-                        <td><%= element.name %> </td>
+                        <td><%= element._id.issue_id %> </td>
+                        <td><%= (element.name==null)? "Melihat list issue":element.name %>  </td>
                         <td><%= element.project_name %> </td>
                         <td><%= element.numberofaccess %> </td>
                       </tr>

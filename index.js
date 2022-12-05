@@ -90,7 +90,7 @@ app.get('/issuelog/:id_project', async (req, res) => {
   const id_project = req.params.id_project
   const issue_by_project= await Issue.groupByProject(id_project)
   const page = 'issue'
-  // res.send(issue_by_project)
+  console.log(issue_by_project)
 
   res.render('issuelog',{
     layout:'main-layout',
